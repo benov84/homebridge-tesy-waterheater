@@ -386,14 +386,14 @@ class TesyWaterHeater {
 
     this.service.getCharacteristic(Characteristic.CurrentTemperature)
       .setProps({
-        minStep: 0.1
+        minStep: 1
       });
 
     this.service.getCharacteristic(Characteristic.HeatingThresholdTemperature)
       .setProps({
         minValue: this.minTemp,
         maxValue: this.maxTemp,
-        minStep: 0.5
+        minStep: 1
       });
 
     //adding this characteristic so the marker for current temperature appears in the homekit wheel.
@@ -401,7 +401,7 @@ class TesyWaterHeater {
       .setProps({
         minValue: this.minTemp,
         maxValue: this.maxTemp,
-        minStep: 0.5
+        minStep: 1
       })
       .updateValue(0);
  
